@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import ColorList from "./components/ColorList";
 
-
 function App() {
   const NUMCOLORS = 6;
   let winningIndex;
@@ -17,42 +16,61 @@ function App() {
       red: getRandomRGB(),
       green: getRandomRGB(),
       blue: getRandomRGB(),
-      isWinner: false
+      isWinner: false,
     };
     return newColor;
   }
   function getWinningIndex() {
-    winningIndex = (Math.floor(Math.random() * NUMCOLORS))
-    return winningIndex
+    winningIndex = Math.floor(Math.random() * NUMCOLORS);
+    return winningIndex;
   }
 
-  function startGame() {
-    getWinningIndex()
-    const newColors = [];
-    let winner;
+  // function startGame() {
+  //   getWinningIndex()
+  //   const newColors = [];
+  //   let winner;
 
-    for (let i = 0; i < NUMCOLORS; i++) {
-      newColors.push(getNewColor());
-      if (i === winningIndex) {
-        winner = newColors[winningIndex];
-        newColors[winningIndex].isWinner = true
-      }
-    }
-   setGameColors([...gameColors, ...newColors]);
-    setWinningColor({...winningColor, ...winner})
-  }
+  //   for (let i = 0; i < NUMCOLORS; i++) {
+  //     newColors.push(getNewColor());
+  //     if (i === winningIndex) {
+  //       winner = newColors[winningIndex];
+  //       newColors[winningIndex].isWinner = true
+  //     }
+  //   }
+  //  setGameColors([...gameColors, ...newColors]);
+  //   setWinningColor({...winningColor, ...winner})
+  // }
 
-  function resetGame() {
-    window.location.reload(false);
-  }
+  // function resetGame() {
+  //   window.location.reload(false);
+  // }
 
   useEffect(() => {
+    function startGame() {
+      getWinningIndex();
+      const newColors = [];
+      let winner;
+
+      for (let i = 0; i < NUMCOLORS; i++) {
+        newColors.push(getNewColor());
+        if (i === winningIndex) {
+          winner = newColors[winningIndex];
+          newColors[winningIndex].isWinner = true;
+        }
+      }
+      setGameColors([...gameColors, ...newColors]);
+      setWinningColor({ ...winningColor, ...winner });
+    }
     startGame();
-  }, [""]);
+  }, []);
 
   return (
     <div className="App">
-      <ColorList gameColors={gameColors} winningColor={winningColor} resetGame={resetGame}/>
+      <ColorList
+        gameColors={gameColors}
+        winningColor={winningColor}
+        resetGame={resetGame}
+      />
     </div>
   );
 }
