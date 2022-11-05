@@ -39,7 +39,7 @@ function App() {
     }
    setGameColors([...gameColors, ...newColors]);
     setWinningColor({...winningColor, ...winner})
-  }, [])
+  }, [gameColors, getNewColor, getWinningIndex, winningColor, winningIndex])
 
   function resetGame() {
     window.location.reload(false);
