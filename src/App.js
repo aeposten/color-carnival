@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import ColorList from "./components/ColorList";
 
 function App() {
@@ -25,7 +25,7 @@ function App() {
     return winningIndex;
   }
 
-  function startGame() {
+  const startGame = useCallback(() =>  {
     getWinningIndex()
     const newColors = [];
     let winner;
@@ -39,7 +39,7 @@ function App() {
     }
    setGameColors([...gameColors, ...newColors]);
     setWinningColor({...winningColor, ...winner})
-  }
+  }, [])
 
   function resetGame() {
     window.location.reload(false);
