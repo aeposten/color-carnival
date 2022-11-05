@@ -41,9 +41,9 @@ function App() {
   //   setWinningColor({...winningColor, ...winner})
   // }
 
-  // function resetGame() {
-  //   window.location.reload(false);
-  // }
+  function resetGame() {
+    window.location.reload(false);
+  }
 
   useEffect(() => {
     function startGame() {
