@@ -46,23 +46,8 @@ function App() {
   }
 
   useEffect(() => {
-    function startGame() {
-      getWinningIndex();
-      const newColors = [];
-      let winner;
-
-      for (let i = 0; i < NUMCOLORS; i++) {
-        newColors.push(getNewColor());
-        if (i === winningIndex) {
-          winner = newColors[winningIndex];
-          newColors[winningIndex].isWinner = true;
-        }
-      }
-      setGameColors([...gameColors, ...newColors]);
-      setWinningColor({ ...winningColor, ...winner });
-    }
     startGame();
-  }, []);
+  }, [startGame]);
 
   return (
     <div className="App">
