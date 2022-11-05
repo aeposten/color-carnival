@@ -48,7 +48,7 @@ function App() {
 
   useEffect(() => {
     startGame();
-  }, []);
+  }, [""]);
 
   return (
     <div className="App">
