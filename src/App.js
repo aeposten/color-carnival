@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import ColorList from "./components/ColorList";
-import Winner from "./components/Winner";
+
 
 function App() {
   const NUMCOLORS = 6;

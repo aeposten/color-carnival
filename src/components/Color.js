@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 function Color({ color, handleIsWinner, index }) {
   const [divContent, setDivContent] = useState({ content: "" });

@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Color from "./Color";
 import Winner from "./Winner";
 function ColorList({ gameColors, winningColor, resetGame }) {
