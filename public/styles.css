@@ -1,0 +1,113 @@
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@400;800&display=swap");
+:root {
+  --blue: #00cecb;
+}
+
+* {
+  margin: 0;
+}
+
+.App {
+  display: grid;
+
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+
+  gap: 0px;
+  height: 100vh;
+  font-family: "Karla", sans-serif;
+}
+
+#item-0,
+#item-1,
+#item-2,
+#item-3,
+#item-4,
+#item-5,
+#item-6 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#item-1 {
+  grid-row-start: 1;
+  grid-column-start: 1;
+
+  grid-row-end: 2;
+  grid-column-end: 3;
+}
+
+#item-2 {
+  grid-row-start: 1;
+  grid-column-start: 3;
+
+  grid-row-end: 2;
+  grid-column-end: 5;
+}
+
+#item-3 {
+  grid-row-start: 2;
+  grid-column-start: 1;
+
+  grid-row-end: 4;
+  grid-column-end: 2;
+}
+
+#item-4 {
+  grid-row-start: 2;
+  grid-column-start: 4;
+
+  grid-row-end: 4;
+  grid-column-end: 5;
+}
+
+#item-5 {
+  grid-row-start: 4;
+  grid-column-start: 1;
+
+  grid-row-end: 5;
+  grid-column-end: 3;
+}
+
+#item-0 {
+  grid-row-start: 4;
+  grid-column-start: 3;
+
+  grid-row-end: 5;
+  grid-column-end: 5;
+}
+
+
+#item-6 {
+  grid-row-start: 2;
+  grid-column-start: 2;
+
+  grid-row-end: 4;
+  grid-column-end: 4;
+}
+
+button {
+  cursor: pointer;
+  width: 200px;
+  height: 40px;
+  background-color: var(--blue);
+  border: none;
+  border-radius: 20px;
+  font-weight: bold;
+  transition-duration: 300ms;
+}
+
+button:hover,
+button:focus {
+  transform: scale(1.1);
+}
+
+h1, h2 {
+  text-align: center;
+}
+
+p {
+  text-align: center;
+}
